@@ -18,6 +18,7 @@ Updated: Joe Marini (joemarini@google.com)
 */
 
 var chosenEntry = null;
+var loadInitialFileButton = document.querySelector('#load_initial_file');
 var chooseFileButton = document.querySelector('#choose_file');
 var chooseDirButton = document.querySelector('#choose_dir');
 var saveFileButton = document.querySelector('#save_file');
@@ -212,6 +213,10 @@ saveFileButton.addEventListener('click', function(e) {
   });
 });
 
+loadInitialFileButton.addEventListener('click', function(e) {
+  loadInitialFile(launchData);
+});
+
 // Support dropping a single file onto this app.
 var dnd = new DnDFileController('body', function(data) {
   chosenEntry = null;
@@ -241,4 +246,4 @@ var dnd = new DnDFileController('body', function(data) {
   displayEntryData(chosenEntry);
 });
 
-loadInitialFile(launchData);
+//loadInitialFile(launchData);
